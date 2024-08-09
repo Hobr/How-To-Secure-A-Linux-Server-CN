@@ -109,14 +109,14 @@ There are many guides provided by experts, industry leaders, and the distributio
 
 - The [Center for Internet Security (CIS)](https://www.cisecurity.org/) provides [benchmarks](https://www.cisecurity.org/cis-benchmarks/) that are exhaustive, industry trusted, step-by-step instructions for securing many flavors of Linux. Check their [About Us](https://www.cisecurity.org/about-us/) page for details. My recommendation is to go through this guide (the one you're reading here) first and THEN CIS's guide. That way their recommendations will trump anything in this guide.
 - For distribution specific hardening/security guides, check your distributions documentation.
-- https://security.utexas.edu/os-hardening-checklist/linux-7 - Red Hat Enterprise Linux 7 Hardening Checklist
-- https://cloudpro.zone/index.php/2018/01/18/debian-9-3-server-setup-guide-part-1/ - # Debian 9.3 server setup guide
-- https://blog.vigilcode.com/2011/04/ubuntu-server-initial-security-quick-secure-setup-part-i/ - Ubuntu Server Initial Security guide
-- https://www.tldp.org/LDP/sag/html/index.html
-- https://seifried.org/lasg/
-- https://news.ycombinator.com/item?id=19178964
-- https://wiki.archlinux.org/index.php/Security - many folks have also recommended this one
-- https://securecompliance.co/linux-server-hardening-checklist/
+- <https://security.utexas.edu/os-hardening-checklist/linux-7> - Red Hat Enterprise Linux 7 Hardening Checklist
+- <https://cloudpro.zone/index.php/2018/01/18/debian-9-3-server-setup-guide-part-1/> - # Debian 9.3 server setup guide
+- <https://blog.vigilcode.com/2011/04/ubuntu-server-initial-security-quick-secure-setup-part-i/> - Ubuntu Server Initial Security guide
+- <https://www.tldp.org/LDP/sag/html/index.html>
+- <https://seifried.org/lasg/>
+- <https://news.ycombinator.com/item?id=19178964>
+- <https://wiki.archlinux.org/index.php/Security> - many folks have also recommended this one
+- <https://securecompliance.co/linux-server-hardening-checklist/>
 
 ([Table of Contents](#table-of-contents))
 
@@ -124,25 +124,25 @@ There are many guides provided by experts, industry leaders, and the distributio
 
 - [ ] [Custom Jails for Fail2ban](#custom-jails)
 - [ ] MAC (Mandatory Access Control) and Linux Security Modules (LSMs)
-   - https://wiki.archlinux.org/index.php/security#Mandatory_access_control
-   - Security-Enhanced Linux / SELinux
-       - https://en.wikipedia.org/wiki/Security-Enhanced_Linux
-       - https://linuxtechlab.com/beginners-guide-to-selinux/
-       - https://linuxtechlab.com/replicate-selinux-policies-among-linux-machines/
-       - https://teamignition.us/how-to-stop-being-a-scrub-and-learn-to-use-selinux.html
-   - AppArmor
-       - https://wiki.archlinux.org/index.php/AppArmor
-       - https://security.stackexchange.com/questions/29378/comparison-between-apparmor-and-selinux
-        - http://www.insanitybit.com/2012/06/01/why-i-like-apparmor-more-than-selinux-5/
+  - <https://wiki.archlinux.org/index.php/security#Mandatory_access_control>
+  - Security-Enhanced Linux / SELinux
+    - <https://en.wikipedia.org/wiki/Security-Enhanced_Linux>
+    - <https://linuxtechlab.com/beginners-guide-to-selinux/>
+    - <https://linuxtechlab.com/replicate-selinux-policies-among-linux-machines/>
+    - <https://teamignition.us/how-to-stop-being-a-scrub-and-learn-to-use-selinux.html>
+  - AppArmor
+    - <https://wiki.archlinux.org/index.php/AppArmor>
+    - <https://security.stackexchange.com/questions/29378/comparison-between-apparmor-and-selinux>
+    - <http://www.insanitybit.com/2012/06/01/why-i-like-apparmor-more-than-selinux-5/>
 - [ ] disk encryption
 - [ ] Rkhunter and chrootkit
-    - http://www.chkrootkit.org/
-    - http://rkhunter.sourceforge.net/
-    - https://www.cyberciti.biz/faq/howto-check-linux-rootkist-with-detectors-software/
-    - https://www.tecmint.com/install-rootkit-hunter-scan-for-rootkits-backdoors-in-linux/
-- [ ] shipping/backing up logs - https://news.ycombinator.com/item?id=19178681
-- [ ] CIS-CAT - https://learn.cisecurity.org/cis-cat-landing-page
-- [ ] debsums - https://blog.sleeplessbeastie.eu/2015/03/02/how-to-verify-installed-packages/
+  - <http://www.chkrootkit.org/>
+  - <http://rkhunter.sourceforge.net/>
+  - <https://www.cyberciti.biz/faq/howto-check-linux-rootkist-with-detectors-software/>
+  - <https://www.tecmint.com/install-rootkit-hunter-scan-for-rootkits-backdoors-in-linux/>
+- [ ] shipping/backing up logs - <https://news.ycombinator.com/item?id=19178681>
+- [ ] CIS-CAT - <https://learn.cisecurity.org/cis-cat-landing-page>
+- [ ] debsums - <https://blog.sleeplessbeastie.eu/2015/03/02/how-to-verify-installed-packages/>
 
 ([Table of Contents](#table-of-contents))
 
@@ -154,7 +154,7 @@ This guide...
 
 - ...**is** a work in progress.
 - ...**is** focused on **at-home** Linux servers. All of the concepts/recommendations here apply to larger/professional environments but those use-cases call for more advanced and specialized configurations that are out-of-scope for this guide.
-- ...**does not** teach you about Linux, how to [install Linux](#installing-linux), or how to use it. Check https://linuxjourney.com/ if you're new to Linux.
+- ...**does not** teach you about Linux, how to [install Linux](#installing-linux), or how to use it. Check <https://linuxjourney.com/> if you're new to Linux.
 - ...**is** meant to be [Linux distribution agnostic](#picking-a-linux-distribution).
 - ...**does not** teach you everything you need to know about security nor does it get into all aspects of system/server security. For example, physical security is out of scope for this guide.
 - ...**does not** talk about how programs/tools work, nor does it delve into their nook and crannies. Most of the programs/tools this guide references are very powerful and highly configurable. The goal is to cover the bare necessities -- enough to whet your appetite and make you hungry enough to want to go and learn more.
@@ -214,7 +214,7 @@ Before you start you will want to identify what your Principles are. What is you
   - Is physical access to your server/network a possible attack vector?
   - Will you be opening ports on your router so you can access your server from outside your home?
   - Will you be hosting a file share on your server that will be mounted on a desktop class machine? What is the possibility of the desktop machine getting infected and, in turn, infecting the server?
- - Do you have a means of recovering if your security implementation locks you out of your own server? For example, you [disabled root login](#disable-root-login) or [password protected GRUB](#password-protect-grub).
+- Do you have a means of recovering if your security implementation locks you out of your own server? For example, you [disabled root login](#disable-root-login) or [password protected GRUB](#password-protect-grub).
 
 These are just **a few things** to think about. Before you start securing your server you will want to understand what you're trying to protect against and why so you know what you need to do.
 
@@ -272,6 +272,7 @@ Where applicable, use the expert install option so you have tighter control of w
 ([Table of Contents](#table-of-contents))
 
 ### Using Ansible playbooks to secure your Linux Server
+
 Ansible playbooks of this guide are available at [How To Secure A Linux Server With Ansible](https://github.com/moltenbit/How-To-Secure-A-Linux-Server-With-Ansible).
 
 Make sure to edit the variables according to your needs and read all tasks beforehand to confirm it does not break your system. After running the playbooks ensure that all settings are configured to your needs!
@@ -279,6 +280,7 @@ Make sure to edit the variables according to your needs and read all tasks befor
 1. Install [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 2. git clone [How To Secure A Linux Server With Ansible](https://github.com/moltenbit/How-To-Secure-A-Linux-Server-With-Ansible)
 3. [Create SSH-Public/Private-Keys](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server#ssh-publicprivate-keys)
+
   ```
   ssh-keygen -t ed25519
   ```
@@ -313,7 +315,6 @@ Run the main playbook with the new users password you specified in the *variable
 If you need to run the playbooks multiple times remember to use the SSH key and the new SSH port:
 
     ansible-playbook --inventory hosts.yml -e ansible_ssh_port=SSH_PORT --key-file /PATH/TO/SSH/KEY main-playbook.yml
-
 
 ([Table of Contents](#table-of-contents))
 
@@ -364,12 +365,12 @@ We will be using Ed25519 keys which, according to [https://linux-audit.com/](htt
 
 #### References
 
-- https://www.ssh.com/ssh/public-key-authentication
-- https://help.ubuntu.com/community/SSH/OpenSSH/Keys
-- https://linux-audit.com/using-ed25519-openssh-keys-instead-of-dsa-rsa-ecdsa/
-- https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process
-- https://wiki.archlinux.org/index.php/SSH_Keys
-- https://www.ssh.com/ssh/copy-id
+- <https://www.ssh.com/ssh/public-key-authentication>
+- <https://help.ubuntu.com/community/SSH/OpenSSH/Keys>
+- <https://linux-audit.com/using-ed25519-openssh-keys-instead-of-dsa-rsa-ecdsa/>
+- <https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process>
+- <https://wiki.archlinux.org/index.php/SSH_Keys>
+- <https://www.ssh.com/ssh/copy-id>
 - `man ssh-keygen`
 - `man ssh-copy-id`
 - `man ssh-add`
@@ -496,11 +497,11 @@ SSH is a door into your server. This is especially true if you are opening ports
 
 #### References
 
-- Mozilla's OpenSSH guidelines for OpenSSH 6.7+ at https://infosec.mozilla.org/guidelines/openssh#modern-openssh-67
-- https://linux-audit.com/audit-and-harden-your-ssh-configuration/
-- https://www.ssh.com/ssh/sshd_config/
-- https://www.techbrown.com/harden-ssh-secure-linux-vps-server/ (broken; try http://web.archive.org/web/20200413100933/https://www.techbrown.com/harden-ssh-secure-linux-vps-server/)
-- https://serverfault.com/questions/660160/openssh-difference-between-internal-sftp-and-sftp-server/660325
+- Mozilla's OpenSSH guidelines for OpenSSH 6.7+ at <https://infosec.mozilla.org/guidelines/openssh#modern-openssh-67>
+- <https://linux-audit.com/audit-and-harden-your-ssh-configuration/>
+- <https://www.ssh.com/ssh/sshd_config/>
+- <https://www.techbrown.com/harden-ssh-secure-linux-vps-server/> (broken; try <http://web.archive.org/web/20200413100933/https://www.techbrown.com/harden-ssh-secure-linux-vps-server/>)
+- <https://serverfault.com/questions/660160/openssh-difference-between-internal-sftp-and-sftp-server/660325>
 - `man sshd_config`
 - Thanks to [than0s](https://github.com/than0s) for [how to find duplicate settings](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/38).
 
@@ -662,8 +663,8 @@ The Diffie-Hellman algorithm is used by SSH to establish a secure connection. Th
 
 #### References
 
-- Mozilla's OpenSSH guidelines for OpenSSH 6.7+ at https://infosec.mozilla.org/guidelines/openssh#modern-openssh-67
-- https://infosec.mozilla.org/guidelines/key_management
+- Mozilla's OpenSSH guidelines for OpenSSH 6.7+ at <https://infosec.mozilla.org/guidelines/openssh#modern-openssh-67>
+- <https://infosec.mozilla.org/guidelines/key_management>
 - `man moduli`
 
 #### Steps
@@ -702,13 +703,13 @@ Many folks might find the experience cumbersome or annoying. And, access to your
 
 #### How It Works
 
-On Linux, PAM is responsible for authentication. There are four tasks to PAM that you can read about at https://en.wikipedia.org/wiki/Linux_PAM. This section talks about the authentication task.
+On Linux, PAM is responsible for authentication. There are four tasks to PAM that you can read about at <https://en.wikipedia.org/wiki/Linux_PAM>. This section talks about the authentication task.
 
 When you log into a server, be it directly from the console or via SSH, the door you came through will send the request to the authentication task of PAM and PAM will ask for and verify your password. You can customize the rules each doors use. For example, you could have one set of rules when logging in directly from the console and another set of rules for when logging in via SSH.
 
 This section will alter the authentication rules for when logging in via SSH to require both a password and a 6 digit code.
 
-We will use Google's libpam-google-authenticator PAM module to create and verify a [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) key. https://fastmail.blog/2016/07/22/how-totp-authenticator-apps-work/ and https://jemurai.com/2018/10/11/how-it-works-totp-based-mfa/ have very good writeups of how TOTP works.
+We will use Google's libpam-google-authenticator PAM module to create and verify a [TOTP](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) key. <https://fastmail.blog/2016/07/22/how-totp-authenticator-apps-work/> and <https://jemurai.com/2018/10/11/how-it-works-totp-based-mfa/> have very good writeups of how TOTP works.
 
 What we will do is tell the server's SSH PAM configuration to ask the user for their password and then their numeric token. PAM will then verify the user's password and, if it is correct, then it will route the authentication request to libpam-google-authenticator which will ask for and verify your 6 digit token. If, and only if, everything is good will the authentication succeed and user be allowed to log in.
 
@@ -724,11 +725,11 @@ What we will do is tell the server's SSH PAM configuration to ask the user for t
 
 #### References
 
-- https://github.com/google/google-authenticator-libpam
-- https://en.wikipedia.org/wiki/Linux_PAM
-- https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm
-- https://fastmail.blog/2016/07/22/how-totp-authenticator-apps-work/
-- https://jemurai.com/2018/10/11/how-it-works-totp-based-mfa/
+- <https://github.com/google/google-authenticator-libpam>
+- <https://en.wikipedia.org/wiki/Linux_PAM>
+- <https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm>
+- <https://fastmail.blog/2016/07/22/how-totp-authenticator-apps-work/>
+- <https://jemurai.com/2018/10/11/how-it-works-totp-based-mfa/>
 
 #### Steps
 
@@ -845,9 +846,10 @@ sudo lets accounts run commands as other accounts, including **root**. We want t
 - Your installation may have already done this, or may already have a special group intended for this purpose so check first.
   - Debian creates the sudo group. To view users that are part of this group (thus have sudo privileges):
 
-	  ```
-	  cat /etc/group | grep "sudo"
-	  ```
+   ```
+   cat /etc/group | grep "sudo"
+   ```
+
   - RedHat creates the wheel group
 - See [https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/39](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/39) for a note on some distributions making it so `sudo` does not require a password. Thanks to [sbrl](https://github.com/sbrl) for sharing.
 
@@ -991,7 +993,7 @@ Many security protocols leverage the time. If your system time is incorrect, it 
 
 #### How It Works
 
-NTP stands for Network Time Protocol. In the context of this guide, an NTP client on the server is used to update the server time with the official time pulled from official servers. Check https://www.pool.ntp.org/en/ for all of the public NTP servers.
+NTP stands for Network Time Protocol. In the context of this guide, an NTP client on the server is used to update the server time with the official time pulled from official servers. Check <https://www.pool.ntp.org/en/> for all of the public NTP servers.
 
 #### Goals
 
@@ -999,11 +1001,11 @@ NTP stands for Network Time Protocol. In the context of this guide, an NTP clien
 
 #### References
 
-- https://cloudpro.zone/index.php/2018/01/27/debian-9-3-server-setup-guide-part-4/
-- https://en.wikipedia.org/wiki/Network_Time_Protocol
-- https://www.pool.ntp.org/en/
-- https://serverfault.com/questions/957302/securing-hardening-ntp-client-on-linux-servers-config-file/957450#957450
-- https://tf.nist.gov/tf-cgi/servers.cgi
+- <https://cloudpro.zone/index.php/2018/01/27/debian-9-3-server-setup-guide-part-4/>
+- <https://en.wikipedia.org/wiki/Network_Time_Protocol>
+- <https://www.pool.ntp.org/en/>
+- <https://serverfault.com/questions/957302/securing-hardening-ntp-client-on-linux-servers-config-file/957450#957450>
+- <https://tf.nist.gov/tf-cgi/servers.cgi>
 
 #### Steps
 
@@ -1105,7 +1107,7 @@ NTP stands for Network Time Protocol. In the context of this guide, an NTP clien
 
 #### Why
 
-To quote https://linux-audit.com/linux-system-hardening-adding-hidepid-to-proc/:
+To quote <https://linux-audit.com/linux-system-hardening-adding-hidepid-to-proc/>:
 
 > When looking in `/proc` you will discover a lot of files and directories. Many of them are just numbers, which represent the information about a particular process ID (PID). By default, Linux systems are deployed to allow all local users to see this all information. This includes process information from other users. This could include sensitive details that you may not want to share with other users. By applying some filesystem configuration tweaks, we can change this behavior and improve the security of the system.
 
@@ -1117,9 +1119,9 @@ To quote https://linux-audit.com/linux-system-hardening-adding-hidepid-to-proc/:
 
 #### References
 
-- https://linux-audit.com/linux-system-hardening-adding-hidepid-to-proc/
-- https://likegeeks.com/secure-linux-server-hardening-best-practices/#Hardening-proc-Directory
-- https://www.cyberciti.biz/faq/linux-hide-processes-from-other-users/
+- <https://linux-audit.com/linux-system-hardening-adding-hidepid-to-proc/>
+- <https://likegeeks.com/secure-linux-server-hardening-best-practices/#Hardening-proc-Directory>
+- <https://www.cyberciti.biz/faq/linux-hide-processes-from-other-users/>
 
 #### Steps
 
@@ -1159,7 +1161,7 @@ By default, accounts can use any password they want, including bad ones. [pwqual
 
 #### How It Works
 
-On Linux, PAM is responsible for authentication. There are four tasks to PAM that you can read about at https://en.wikipedia.org/wiki/Linux_PAM. This section talks about the password task.
+On Linux, PAM is responsible for authentication. There are four tasks to PAM that you can read about at <https://en.wikipedia.org/wiki/Linux_PAM>. This section talks about the password task.
 
 When there is a need to set or change an account password, the password task of PAM handles the request. In this section we will tell PAM's password task to pass the requested new password to libpam-pwquality to make sure it meets our requirements. If the requirements are met it is used/set; if it does not meet the requirements it errors and lets the user know.
 
@@ -1207,7 +1209,6 @@ When there is a need to set or change an account password, the password task of 
      - `maxrepeat=3` = allow a maximum of 3 repeated characters
      - `gecoschec` = do not allow passwords with the account's name
 
-
     [For the lazy](#editing-configuration-files---for-the-lazy):
 
     ``` bash
@@ -1254,14 +1255,14 @@ We will use unattended-upgrades to apply **critical security patches**. We can a
 
 ##### References
 
-- https://wiki.debian.org/UnattendedUpgrades
-- https://debian-handbook.info/browse/stable/sect.regular-upgrades.html
-- https://blog.sleeplessbeastie.eu/2015/01/02/how-to-perform-unattended-upgrades/
-- https://www.vultr.com/docs/how-to-set-up-unattended-upgrades-on-debian-9-stretch
-- https://github.com/mvo5/unattended-upgrades
-- https://wiki.debian.org/UnattendedUpgrades#apt-listchanges
-- https://www.cyberciti.biz/faq/apt-get-apticron-send-email-upgrades-available/
-- https://www.unixmen.com/how-to-get-email-notifications-for-new-updates-on-debianubuntu/
+- <https://wiki.debian.org/UnattendedUpgrades>
+- <https://debian-handbook.info/browse/stable/sect.regular-upgrades.html>
+- <https://blog.sleeplessbeastie.eu/2015/01/02/how-to-perform-unattended-upgrades/>
+- <https://www.vultr.com/docs/how-to-set-up-unattended-upgrades-on-debian-9-stretch>
+- <https://github.com/mvo5/unattended-upgrades>
+- <https://wiki.debian.org/UnattendedUpgrades#apt-listchanges>
+- <https://www.cyberciti.biz/faq/apt-get-apticron-send-email-upgrades-available/>
+- <https://www.unixmen.com/how-to-get-email-notifications-for-new-updates-on-debianubuntu/>
 - `/etc/apt/apt.conf.d/50unattended-upgrades`
 
 ##### Steps
@@ -1332,7 +1333,7 @@ We will use unattended-upgrades to apply **critical security patches**. We can a
 
     **Notes**:
     - Check `/usr/lib/apt/apt.systemd.daily` for details on the `APT::Periodic` options
-    - Check https://github.com/mvo5/unattended-upgrades for details on the `Unattended-Upgrade` options
+    - Check <https://github.com/mvo5/unattended-upgrades> for details on the `Unattended-Upgrade` options
 
 1. Run a dry-run of unattended-upgrades to make sure your configuration file is okay:
 
@@ -1374,12 +1375,12 @@ WIP
 #### References
 
 - Thanks to [branneman](https://github.com/branneman) for this idea as submitted in [issue #33](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/33).
-- https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/
-- https://www.2uo.de/myths-about-urandom
-- https://www.gnu.org/software/hurd/user/tlecarrour/rng-tools.html
-- https://wiki.archlinux.org/index.php/Rng-tools
-- https://www.howtoforge.com/helping-the-random-number-generator-to-gain-enough-entropy-with-rng-tools-debian-lenny
-- https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-encryption-using_the_random_number_generator
+- <https://hackaday.com/2017/11/02/what-is-entropy-and-how-do-i-get-more-of-it/>
+- <https://www.2uo.de/myths-about-urandom>
+- <https://www.gnu.org/software/hurd/user/tlecarrour/rng-tools.html>
+- <https://wiki.archlinux.org/index.php/Rng-tools>
+- <https://www.howtoforge.com/helping-the-random-number-generator-to-gain-enough-entropy-with-rng-tools-debian-lenny>
+- <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-encryption-using_the_random_number_generator>
 
 #### Steps
 
@@ -1411,8 +1412,8 @@ WIP
     ```
 
 1. Test randomness:
-    - https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-encryption-using_the_random_number_generator
-    - https://wiki.archlinux.org/index.php/Rng-tools
+    - <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-encryption-using_the_random_number_generator>
+    - <https://wiki.archlinux.org/index.php/Rng-tools>
 
 ([Table of Contents](#table-of-contents))
 
@@ -1496,10 +1497,10 @@ chown -R $PANICUSR $ScriptLoc
 sudo cp --preserve /etc/pam.d/common-auth /etc/pam.d/common-auth.bck
 
 echo "
-auth   	[success=2 default=ignore]	     pam_unix.so nullok_secure
+auth    [success=2 default=ignore]      pam_unix.so nullok_secure
 auth    [success=1 default=ignore]      pam_duress.so
-auth	   requisite	                    		pam_deny.so
-auth	   required	                     		pam_permit.so
+auth    requisite                       pam_deny.so
+auth    required                        pam_permit.so
 " | sudo tee /etc/pam.d/common-auth
 
 read -r -p "Press <Enter> Key to Finish PAM DURESS Script!"
@@ -1534,7 +1535,7 @@ You can create rules by explicitly specifying the ports or with application conf
 
 #### Goals
 
- - all network traffic, input and output, blocked except those we explicitly allow
+- all network traffic, input and output, blocked except those we explicitly allow
 
 #### Notes
 
@@ -1542,7 +1543,7 @@ You can create rules by explicitly specifying the ports or with application conf
 
 #### References
 
-- https://launchpad.net/ufw
+- <https://launchpad.net/ufw>
 
 #### Steps
 
@@ -1594,7 +1595,7 @@ You can create rules by explicitly specifying the ports or with application conf
     # allow traffic out to port 53 -- DNS
     sudo ufw allow out 53 comment 'allow DNS calls out'
 
-	# allow traffic out to port 123 -- NTP
+ # allow traffic out to port 123 -- NTP
     sudo ufw allow out 123 comment 'allow NTP out'
 
     # allow traffic out for HTTP, HTTPS, or FTP
@@ -1803,20 +1804,20 @@ Even if you have a firewall to guard your doors, it is possible to try brute-for
 
 #### How It Works
 
-I can't explain it any better than user [FINESEC](https://serverfault.com/users/143961/finesec) from https://serverfault.com/ did at: https://serverfault.com/a/447604/289829.
+I can't explain it any better than user [FINESEC](https://serverfault.com/users/143961/finesec) from <https://serverfault.com/> did at: <https://serverfault.com/a/447604/289829>.
 
 > Fail2BAN scans log files of various applications such as apache, ssh or ftp and automatically bans IPs that show the malicious signs such as automated login attempts. PSAD on the other hand scans iptables and ip6tables log messages (typically /var/log/messages) to detect and optionally block scans and other types of suspect traffic such as DDoS or OS fingerprinting attempts. It's ok to use both programs at the same time because they operate on different level.
 
-And, since we're already using [UFW](#ufw-uncomplicated-firewall) so we'll follow the awesome instructions by [netson](https://gist.github.com/netson) at https://gist.github.com/netson/c45b2dc4e835761fbccc to make PSAD work with UFW.
+And, since we're already using [UFW](#ufw-uncomplicated-firewall) so we'll follow the awesome instructions by [netson](https://gist.github.com/netson) at <https://gist.github.com/netson/c45b2dc4e835761fbccc> to make PSAD work with UFW.
 
 #### References
 
-- http://www.cipherdyne.org/psad/
-- http://www.cipherdyne.org/psad/docs/config.html
-- https://www.thefanclub.co.za/how-to/how-install-psad-intrusion-detection-ubuntu-1204-lts-server
-- https://serverfault.com/a/447604/289829
-- https://serverfault.com/a/770424/289829
-- https://gist.github.com/netson/c45b2dc4e835761fbccc
+- <http://www.cipherdyne.org/psad/>
+- <http://www.cipherdyne.org/psad/docs/config.html>
+- <https://www.thefanclub.co.za/how-to/how-install-psad-intrusion-detection-ubuntu-1204-lts-server>
+- <https://serverfault.com/a/447604/289829>
+- <https://serverfault.com/a/770424/289829>
+- <https://gist.github.com/netson/c45b2dc4e835761fbccc>
 - Thanks to [moltenbit](https://github.com/moltenbit) for catching the issue ([#61](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/61)) with `psadwatchd`.
 
 #### Steps
@@ -1846,7 +1847,7 @@ And, since we're already using [UFW](#ufw-uncomplicated-firewall) so we'll follo
    |[`ENABLE_AUTO_IDS`](http://www.cipherdyne.org/psad/docs/config.html#ENABLE_AUTO_IDS)|`ENABLE_AUTO_IDS Y;`|
    |`ENABLE_AUTO_IDS_EMAILS`|`ENABLE_AUTO_IDS_EMAILS Y;`|
 
-   Check the configuration file psad's documentation at http://www.cipherdyne.org/psad/docs/config.html for more details.
+   Check the configuration file psad's documentation at <http://www.cipherdyne.org/psad/docs/config.html> for more details.
 
 1. <a name="psad_step4"></a>Now we need to make some changes to ufw so it works with psad by telling ufw to log all traffic so psad can analyze it. Do this by editing **two files** and adding these lines **at the end but before the COMMIT line**.
 
@@ -1978,10 +1979,10 @@ Fail2ban monitors the logs of your applications (like SSH and Apache) to detect 
 
 #### References
 
-- https://www.fail2ban.org/
-- https://blog.vigilcode.com/2011/05/ufw-with-fail2ban-quick-secure-setup-part-ii/
-- https://dodwell.us/security/ufw-fail2ban-portscan.html
-- https://www.howtoforge.com/community/threads/fail2ban-and-ufw-on-debian.77261/
+- <https://www.fail2ban.org/>
+- <https://blog.vigilcode.com/2011/05/ufw-with-fail2ban-quick-secure-setup-part-ii/>
+- <https://dodwell.us/security/ufw-fail2ban-portscan.html>
+- <https://www.howtoforge.com/community/threads/fail2ban-and-ufw-on-debian.77261/>
 
 #### Steps
 
@@ -2117,14 +2118,14 @@ WIP
 
 #### References
 
-- https://aide.github.io/
-- https://www.hiroom2.com/2017/06/09/debian-8-file-integrity-check-with-aide/
-- https://blog.rapid7.com/2017/06/30/how-to-install-and-configure-aide-on-ubuntu-linux/
-- https://www.stephenrlang.com/2016/03/using-aide-for-file-integrity-monitoring-fim-on-ubuntu/
-- https://www.howtoforge.com/how-to-configure-the-aide-advanced-intrusion-detection-environment-file-integrity-scanner-for-your-website
-- https://www.tecmint.com/check-integrity-of-file-and-directory-using-aide-in-linux/
-- https://www.cyberciti.biz/faq/debian-ubuntu-linux-software-integrity-checking-with-aide/
-- https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/83
+- <https://aide.github.io/>
+- <https://www.hiroom2.com/2017/06/09/debian-8-file-integrity-check-with-aide/>
+- <https://blog.rapid7.com/2017/06/30/how-to-install-and-configure-aide-on-ubuntu-linux/>
+- <https://www.stephenrlang.com/2016/03/using-aide-for-file-integrity-monitoring-fim-on-ubuntu/>
+- <https://www.howtoforge.com/how-to-configure-the-aide-advanced-intrusion-detection-environment-file-integrity-scanner-for-your-website>
+- <https://www.tecmint.com/check-integrity-of-file-and-directory-using-aide-in-linux/>
+- <https://www.cyberciti.biz/faq/debian-ubuntu-linux-software-integrity-checking-with-aide/>
+- <https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/83>
 
 #### Steps
 
@@ -2337,14 +2338,14 @@ WIP
 
 #### References
 
-- https://www.clamav.net/documents/installation-on-debian-and-ubuntu-linux-distributions
-- https://wiki.debian.org/ClamAV
-- https://www.osradar.com/install-clamav-debian-9-ubuntu-18/
-- https://www.lisenet.com/2014/automate-clamav-to-perform-daily-system-scan-and-send-email-notifications-on-linux/
-- https://www.howtoforge.com/tutorial/configure-clamav-to-scan-and-notify-virus-and-malware/
-- https://serverfault.com/questions/741299/is-there-a-way-to-keep-clamav-updated-on-debian-8
-- https://askubuntu.com/questions/250290/how-do-i-scan-for-viruses-with-clamav
-- https://ngothang.com/how-to-install-clamav-and-configure-daily-scanning-on-centos/
+- <https://www.clamav.net/documents/installation-on-debian-and-ubuntu-linux-distributions>
+- <https://wiki.debian.org/ClamAV>
+- <https://www.osradar.com/install-clamav-debian-9-ubuntu-18/>
+- <https://www.lisenet.com/2014/automate-clamav-to-perform-daily-system-scan-and-send-email-notifications-on-linux/>
+- <https://www.howtoforge.com/tutorial/configure-clamav-to-scan-and-notify-virus-and-malware/>
+- <https://serverfault.com/questions/741299/is-there-a-way-to-keep-clamav-updated-on-debian-8>
+- <https://askubuntu.com/questions/250290/how-do-i-scan-for-viruses-with-clamav>
+- <https://ngothang.com/how-to-install-clamav-and-configure-daily-scanning-on-centos/>
 
 #### Steps
 
@@ -2404,7 +2405,7 @@ WIP
     > Mar 16 22:58:24 host freshclam[1288]: Sat Mar 16 22:58:24 2019 -> ^Clamd was NOT notified: Can't connect to clamd through /var/run/clamav/clamd.ctl: No such file or directory
     > ```
 
-    **Note**: Don't worry about that `Local version` line. Check https://serverfault.com/questions/741299/is-there-a-way-to-keep-clamav-updated-on-debian-8 for more details.
+    **Note**: Don't worry about that `Local version` line. Check <https://serverfault.com/questions/741299/is-there-a-way-to-keep-clamav-updated-on-debian-8> for more details.
 
 1. Make a backup of `clamav-daemon`'s configuration file `/etc/clamav/clamd.conf`:
 
@@ -2446,9 +2447,9 @@ WIP
 
 #### References
 
-- http://rkhunter.sourceforge.net/
-- https://www.cyberciti.biz/faq/howto-check-linux-rootkist-with-detectors-software/
-- https://www.tecmint.com/install-rootkit-hunter-scan-for-rootkits-backdoors-in-linux/
+- <http://rkhunter.sourceforge.net/>
+- <https://www.cyberciti.biz/faq/howto-check-linux-rootkist-with-detectors-software/>
+- <https://www.tecmint.com/install-rootkit-hunter-scan-for-rootkits-backdoors-in-linux/>
 
 #### Steps
 
@@ -2486,7 +2487,7 @@ WIP
     |`USE_LOCKING=1`|to prevent issues with rkhunter running multiple times|
     |`SHOW_SUMMARY_WARNINGS_NUMBER=1`|to see the actual number of warnings found|
 
-1. You want rkhunter to run every day and e-mail you the result. You can write your own script or check https://www.tecmint.com/install-rootkit-hunter-scan-for-rootkits-backdoors-in-linux/ for a sample cron script you can use.
+1. You want rkhunter to run every day and e-mail you the result. You can write your own script or check <https://www.tecmint.com/install-rootkit-hunter-scan-for-rootkits-backdoors-in-linux/> for a sample cron script you can use.
 
     On Debian based system, rkhunter comes with cron scripts. To enable them check `/etc/default/rkhunter` or use `dpkg-reconfigure` and say `Yes` to all of the questions:
 
@@ -2532,9 +2533,9 @@ WIP
 
 #### References
 
-- http://www.chkrootkit.org/
-- https://www.cyberciti.biz/faq/howto-check-linux-rootkist-with-detectors-software/
-- https://askubuntu.com/questions/258658/eth0-packet-sniffer-sbin-dhclient
+- <http://www.chkrootkit.org/>
+- <https://www.cyberciti.biz/faq/howto-check-linux-rootkist-with-detectors-software/>
+- <https://askubuntu.com/questions/258658/eth0-packet-sniffer-sbin-dhclient>
 
 #### Steps
 
@@ -2602,14 +2603,14 @@ logwatch's configuration file `/usr/share/logwatch/default.conf/logwatch.conf` s
 #### Notes
 
 - Your server will need to be able to send e-mails for this to work
-- The below steps will result in logwatch running every day. If you want to change the schedule, modify the cronjob to your liking. You'll also want to change the `range` option to cover your recurrence window. See https://www.badpenguin.org/configure-logwatch-for-weekly-email-and-html-output-format for an example.
-- If logwatch fails to deliver mail due to the e-mail having long lines please check https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender as documented in [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29). If you followed [Gmail and Exim4 As MTA With Implicit TLS](#gmail-and-exim4-as-mta-with-implicit-tls) then we already took care of this in step #7.
+- The below steps will result in logwatch running every day. If you want to change the schedule, modify the cronjob to your liking. You'll also want to change the `range` option to cover your recurrence window. See <https://www.badpenguin.org/configure-logwatch-for-weekly-email-and-html-output-format> for an example.
+- If logwatch fails to deliver mail due to the e-mail having long lines please check <https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender> as documented in [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29). If you followed [Gmail and Exim4 As MTA With Implicit TLS](#gmail-and-exim4-as-mta-with-implicit-tls) then we already took care of this in step #7.
 
 #### References
 
 - Thanks to [amacheema](https://github.com/amacheema) for fixing some issues with the steps and letting me know of a long line bug with exim4 as documented in [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29).
-- https://sourceforge.net/projects/logwatch/
-- https://www.digitalocean.com/community/tutorials/how-to-install-and-use-logwatch-log-analyzer-and-reporter-on-a-vps
+- <https://sourceforge.net/projects/logwatch/>
+- <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-logwatch-log-analyzer-and-reporter-on-a-vps>
 
 #### Steps
 
@@ -2688,7 +2689,7 @@ logwatch's configuration file `/usr/share/logwatch/default.conf/logwatch.conf` s
     sudo /etc/cron.daily/00logwatch
     ```
 
-    **Note**: If logwatch fails to deliver mail due to the e-mail having long lines please check https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender as documented in [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29). If you followed [Gmail and Exim4 As MTA With Implicit TLS](#gmail-and-exim4-as-mta-with-implicit-tls) then we already took care of this in step #7.
+    **Note**: If logwatch fails to deliver mail due to the e-mail having long lines please check <https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender> as documented in [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29). If you followed [Gmail and Exim4 As MTA With Implicit TLS](#gmail-and-exim4-as-mta-with-implicit-tls) then we already took care of this in step #7.
 
 ([Table of Contents](#table-of-contents))
 
@@ -2706,9 +2707,9 @@ Obviously we don't want your server listening on ports we don't know about. We'l
 
 #### References
 
-- https://www.reddit.com/r/linux/comments/arx7st/howtosecurealinuxserver_an_evolving_howto_guide/egrib6o/
-- https://www.reddit.com/r/linux/comments/arx7st/howtosecurealinuxserver_an_evolving_howto_guide/egs1rev/
-- https://www.tecmint.com/find-open-ports-in-linux/
+- <https://www.reddit.com/r/linux/comments/arx7st/howtosecurealinuxserver_an_evolving_howto_guide/egrib6o/>
+- <https://www.reddit.com/r/linux/comments/arx7st/howtosecurealinuxserver_an_evolving_howto_guide/egs1rev/>
+- <https://www.tecmint.com/find-open-ports-in-linux/>
 - `man ss`
 
 #### Steps
@@ -2751,18 +2752,18 @@ From [https://cisofy.com/lynis/](https://cisofy.com/lynis/):
 
 #### Notes
 
-- CISOFY offers packages for many distributions. Check https://packages.cisofy.com/ for distribution specific installation instructions.
+- CISOFY offers packages for many distributions. Check <https://packages.cisofy.com/> for distribution specific installation instructions.
 
 #### References
 
-- https://cisofy.com/documentation/lynis/get-started/
-- https://packages.cisofy.com/community/#debian-ubuntu
-- https://thelinuxcode.com/audit-lynis-ubuntu-server/
-- https://www.vultr.com/docs/install-lynis-on-debian-8
+- <https://cisofy.com/documentation/lynis/get-started/>
+- <https://packages.cisofy.com/community/#debian-ubuntu>
+- <https://thelinuxcode.com/audit-lynis-ubuntu-server/>
+- <https://www.vultr.com/docs/install-lynis-on-debian-8>
 
 #### Steps
 
-1. Install lynis. https://cisofy.com/lynis/#installation has detailed instructions on how to install it for your distribution.
+1. Install lynis. <https://cisofy.com/lynis/#installation> has detailed instructions on how to install it for your distribution.
 
     On Debian based systems, using CISOFY's community software repository:
 
@@ -2793,6 +2794,7 @@ From [https://cisofy.com/lynis/](https://cisofy.com/lynis/):
 ### OSSEC - Host Intrusion Detection
 
 #### Why
+
 From [https://github.com/ossec/ossec-hids](https://github.com/ossec/ossec-hids)
 > OSSEC is a full platform to monitor and control your systems. It mixes together all the aspects of HIDS (host-based intrusion detection), log monitoring and SIM/SIEM together in a simple, powerful and open source solution.
 
@@ -2802,11 +2804,12 @@ From [https://github.com/ossec/ossec-hids](https://github.com/ossec/ossec-hids)
 
 #### References
 
-- https://www.ossec.net/docs/
+- <https://www.ossec.net/docs/>
 
 #### Steps
 
 1. Install OSSEC-HIDS from sources
+
     ```bash
     sudo apt install -y libz-dev libssl-dev libpcre2-dev build-essential libsystemd-dev
     wget https://github.com/ossec/ossec-hids/archive/3.7.0.tar.gz
@@ -2822,6 +2825,7 @@ From [https://github.com/ossec/ossec-hids](https://github.com/ossec/ossec-hids)
    ```bash
     sudo /var/ossec/bin/agent_control -i <AGENT_ID>
    ```
+
 `AGENT_ID` by default is `000`, to be sure the command `sudo /var/ossec/bin/agent_control -l` can be used.
 
 **Run integrity/rootkit checking**
@@ -2835,14 +2839,19 @@ OSSEC by default run rootkit check each 2 hours.
 **Alerts**
 
 - All:
+
     ```bash
     tail -f /var/ossec/logs/alerts/alerts.log
     ```
+
 - Integrity check:
+
     ```bash
     sudo cat /var/ossec/logs/alerts/alerts.log | grep -A4  -i integrity
     ```
+
 - Rootkit check:
+
     ```bash
      sudo cat /var/ossec/logs/alerts/alerts.log | grep -A4  "rootcheck,"
     ```
@@ -2900,12 +2909,12 @@ I won't provide [For the lazy](#editing-configuration-files---for-the-lazy) code
 
 #### References
 
-- https://github.com/torvalds/linux/tree/master/Documentation
-- https://www.cyberciti.biz/faq/linux-kernel-etcsysctl-conf-security-hardening/
-- https://geektnt.com/sysctl-conf-hardening.html
-- https://linoxide.com/how-tos/linux-server-protection/
-- https://github.com/klaver/sysctl/blob/master/sysctl.conf
-- https://cloudpro.zone/index.php/2018/01/30/debian-9-3-server-setup-guide-part-5/
+- <https://github.com/torvalds/linux/tree/master/Documentation>
+- <https://www.cyberciti.biz/faq/linux-kernel-etcsysctl-conf-security-hardening/>
+- <https://geektnt.com/sysctl-conf-hardening.html>
+- <https://linoxide.com/how-tos/linux-server-protection/>
+- <https://github.com/klaver/sysctl/blob/master/sysctl.conf>
+- <https://cloudpro.zone/index.php/2018/01/30/debian-9-3-server-setup-guide-part-5/>
 
 #### Steps
 
@@ -2973,9 +2982,9 @@ If you forget the password, you'll have to go through [some work](https://www.cy
 
 #### References
 
-- https://selivan.github.io/2017/12/21/grub2-password-for-all-but-default-menu-entries.html
-- https://help.ubuntu.com/community/Grub2/Passwords
-- https://computingforgeeks.com/how-to-protect-grub-with-password-on-debian-ubuntu-and-kali-linux/
+- <https://selivan.github.io/2017/12/21/grub2-password-for-all-but-default-menu-entries.html>
+- <https://help.ubuntu.com/community/Grub2/Passwords>
+- <https://computingforgeeks.com/how-to-protect-grub-with-password-on-debian-ubuntu-and-kali-linux/>
 - `man grub`
 - `man grub-mkpasswd-pbkdf2`
 
@@ -2995,7 +3004,7 @@ If you forget the password, you'll have to go through [some work](https://www.cy
     > PBKDF2 hash of your password is grub.pbkdf2.sha512.100000.2812C233DFC899EFC3D5991D8CA74068C99D6D786A54F603E9A1EFE7BAEDDB6AA89672F92589FAF98DB9364143E7A1156C9936328971A02A483A84C3D028C4FF.C255442F9C98E1F3C500C373FE195DCF16C56EEBDC55ABDD332DD36A92865FA8FC4C90433757D743776AB186BD3AE5580F63EF445472CC1D151FA03906D08A6D
     > ```
 
-1. Copy everything **after** `PBKDF2 hash of your password is `, **starting from and including** `grub.pbkdf2.sha512...` to the end. You'll need this in the next step.
+1. Copy everything **after** `PBKDF2 hash of your password is`, **starting from and including** `grub.pbkdf2.sha512...` to the end. You'll need this in the next step.
 
 1. The `update-grub` program uses scripts to generate configuration files it will use for GRUB's settings.  Create the file `/etc/grub.d/01_password` and add the below code after replacing `[hash]` with the hash you copied from the first step. This tells `update-grub` to use this username and password for GRUB.
 
@@ -3086,11 +3095,11 @@ An alternative to locking the **root** acount is set a long/complicated **root**
 
 #### References
 
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=806852
-- https://github.com/systemd/systemd/issues/7115
-- https://github.com/karelzak/util-linux/commit/7ff1162e67164cb4ece19dd809c26272461aa254
-- https://github.com/systemd/systemd/issues/11596
-- https://www.reddit.com/r/selfhosted/comments/aoxd4l/new_guide_created_by_me_how_to_secure_a_linux/eg4rkfi/
+- <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=806852>
+- <https://github.com/systemd/systemd/issues/7115>
+- <https://github.com/karelzak/util-linux/commit/7ff1162e67164cb4ece19dd809c26272461aa254>
+- <https://github.com/systemd/systemd/issues/11596>
+- <https://www.reddit.com/r/selfhosted/comments/aoxd4l/new_guide_created_by_me_how_to_secure_a_linux/eg4rkfi/>
 - `man systemd`
 
 #### Steps
@@ -3137,9 +3146,9 @@ In order to explain how umask works I'd have to explain how Linux file/folder pe
 
 #### References
 
-- https://www.linuxnix.com/umask-define-linuxunix/
-- https://serverfault.com/questions/818783/which-umask-is-more-secure-in-linux-022-or-027
-- https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
+- <https://www.linuxnix.com/umask-define-linuxunix/>
+- <https://serverfault.com/questions/818783/which-umask-is-more-secure-in-linux-022-or-027>
+- <https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html>
 - `man umask`
 
 #### Steps
@@ -3247,7 +3256,9 @@ Keep in mind, deborphan finds packages that have **no package dependencies**. Th
 ## The Miscellaneous
 
 ### The Simple way with MSMTP
+
 (#msmtp-alternative)
+
 #### Why
 
 Well I will SIMPLIFY this method, to only output email using Google Mail account (and others). True Simple! :)
@@ -3335,7 +3346,7 @@ There are many guides on-line that cover how to configure Gmail as MTA using STA
 
 Also, as discussed in [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29) and [here](https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender), exim4 will fail for messages with long lines. We'll fix this in this section too.
 
-** **IMPORTANT** ** As mentioned in [#106](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/106), Google no longer lets you use your account's password for authentication. You have to enable 2FA and then use an app-password.
+****IMPORTANT**** As mentioned in [#106](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/106), Google no longer lets you use your account's password for authentication. You have to enable 2FA and then use an app-password.
 
 #### Goals
 
@@ -3345,13 +3356,13 @@ Also, as discussed in [issue #29](https://github.com/imthenachoman/How-To-Secure
 #### References
 
 - Thanks to [remyabel](https://github.com/remyabel) for figuring out how to get this to work with TLS as documented in [issue #24](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/24) and [pull request #26](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/pull/26).
-- https://wiki.debian.org/Exim
-- https://wiki.debian.org/GmailAndExim4
-- https://www.exim.org/exim-html-current/doc/html/spec_html/ch-encrypted_smtp_connections_using_tlsssl.html
-- https://php.quicoto.com/setup-exim4-to-use-gmail-in-ubuntu/
-- https://www.fastmail.com/help/technical/ssltlsstarttls.html
-- exim4 fails for messages with long lines - [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29) and https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender
-- https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/106
+- <https://wiki.debian.org/Exim>
+- <https://wiki.debian.org/GmailAndExim4>
+- <https://www.exim.org/exim-html-current/doc/html/spec_html/ch-encrypted_smtp_connections_using_tlsssl.html>
+- <https://php.quicoto.com/setup-exim4-to-use-gmail-in-ubuntu/>
+- <https://www.fastmail.com/help/technical/ssltlsstarttls.html>
+- exim4 fails for messages with long lines - [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29) and <https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender>
+- <https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/106>
 
 #### Steps
 
@@ -3366,6 +3377,7 @@ Also, as discussed in [issue #29](https://github.com/imthenachoman/How-To-Secure
 1. Configure exim4:
 
     For Debian based systems:
+
     ``` bash
     sudo dpkg-reconfigure exim4-config
     ```
@@ -3576,9 +3588,9 @@ There will come a time when you'll need to look through your iptables logs. Havi
 
 #### References
 
-- https://blog.shadypixel.com/log-iptables-messages-to-a-separate-file-with-rsyslog/
-- https://gist.github.com/netson/c45b2dc4e835761fbccc
-- https://www.rsyslog.com/doc/v8-stable/configuration/actions.html
+- <https://blog.shadypixel.com/log-iptables-messages-to-a-separate-file-with-rsyslog/>
+- <https://gist.github.com/netson/c45b2dc4e835761fbccc>
+- <https://www.rsyslog.com/doc/v8-stable/configuration/actions.html>
 
 #### Steps
 
@@ -3686,12 +3698,12 @@ For any questions, comments, concerns, feedback, or issues, submit a [new issue]
 
 ### Acknowledgments
 
-- https://www.reddit.com/r/linuxquestions/comments/aopzl7/new_guide_created_by_me_how_to_secure_a_linux/
-- https://www.reddit.com/r/selfhosted/comments/aoxd4l/new_guide_created_by_me_how_to_secure_a_linux/
-- https://news.ycombinator.com/item?id=19177435#19178618
-- https://www.reddit.com/r/linuxadmin/comments/arx7xo/howtosecurealinuxserver_an_evolving_howto_guide/
-- https://www.reddit.com/r/linux/comments/arx7st/howtosecurealinuxserver_an_evolving_howto_guide/
-- https://github.com/moltenbit/How-To-Secure-A-Linux-Server-With-Ansible
+- <https://www.reddit.com/r/linuxquestions/comments/aopzl7/new_guide_created_by_me_how_to_secure_a_linux/>
+- <https://www.reddit.com/r/selfhosted/comments/aoxd4l/new_guide_created_by_me_how_to_secure_a_linux/>
+- <https://news.ycombinator.com/item?id=19177435#19178618>
+- <https://www.reddit.com/r/linuxadmin/comments/arx7xo/howtosecurealinuxserver_an_evolving_howto_guide/>
+- <https://www.reddit.com/r/linux/comments/arx7st/howtosecurealinuxserver_an_evolving_howto_guide/>
+- <https://github.com/moltenbit/How-To-Secure-A-Linux-Server-With-Ansible>
 
 ([Table of Contents](#table-of-contents))
 
