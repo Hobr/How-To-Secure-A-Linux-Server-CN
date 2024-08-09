@@ -282,10 +282,10 @@ Make sure to edit the variables according to your needs and read all tasks befor
   ```
   ssh-keygen -t ed25519
   ```
-   
+
 5. Change all variables in *group_vars/variables.yml* according to your needs.
 6. Enable SSH root access before running the playbooks:
-   
+
   ```
   nano /etc/ssh/sshd_config
   [...]
@@ -422,9 +422,9 @@ We will be using Ed25519 keys which, according to [https://linux-audit.com/](htt
     > /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
     > /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
     > user@host's password:
-    > 
+    >
     > Number of key(s) added: 1
-    > 
+    >
     > Now try logging into the machine, with:   "ssh 'user@host'"
     > and check to make sure that only the key(s) you wanted were added.
     > ```
@@ -515,7 +515,7 @@ SSH is a door into your server. This is especially true if you are opening ports
 
 1. Edit `/etc/ssh/sshd_config` then find and edit or add these settings that should be applied regardless of your configuration/setup:
 
-    **Note**: SSH does not like duplicate contradicting settings. For example, if you have `ChallengeResponseAuthentication no` and then `ChallengeResponseAuthentication yes`, SSH will respect the first one and ignore the second. Your `/etc/ssh/sshd_config` file may already have some of the settings/lines below. To avoid issues you will need to manually go through your `/etc/ssh/sshd_config` file and address any duplicate contradicting settings. 
+    **Note**: SSH does not like duplicate contradicting settings. For example, if you have `ChallengeResponseAuthentication no` and then `ChallengeResponseAuthentication yes`, SSH will respect the first one and ignore the second. Your `/etc/ssh/sshd_config` file may already have some of the settings/lines below. To avoid issues you will need to manually go through your `/etc/ssh/sshd_config` file and address any duplicate contradicting settings.
 
     ```
     ########################################################################################################
@@ -749,9 +749,9 @@ What we will do is tell the server's SSH PAM configuration to ask the user for t
     > ```
     > Do you want authentication tokens to be time-based (y/n) y
     > https://www.google.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/user@host%3Fsecret%3DR4ZWX34FQKZROVX7AGLJ64684Y%26issuer%3Dhost
-    > 
+    >
     > ...
-    > 
+    >
     > Your new secret key is: R3NVX3FFQKZROVX7AGLJUGGESY
     > Your verification code is 751419
     > Your emergency scratch codes are:
@@ -760,15 +760,15 @@ What we will do is tell the server's SSH PAM configuration to ask the user for t
     >   78901234
     >   56789012
     >   34567890
-    > 
+    >
     > Do you want me to update your "/home/user/.google_authenticator" file (y/n) y
-    > 
+    >
     > Do you want to disallow multiple uses of the same authentication
     > token? This restricts you to one login about every 30s, but it increases
     > your chances to notice or even prevent man-in-the-middle attacks (y/n) Do you want to disallow multiple uses of the same authentication
     > token? This restricts you to one login about every 30s, but it increases
     > your chances to notice or even prevent man-in-the-middle attacks (y/n) y
-    > 
+    >
     > By default, tokens are good for 30 seconds. In order to compensate for
     > possible time-skew between the client and the server, we allow an extra
     > token before and after the current time. If you experience problems with
@@ -776,7 +776,7 @@ What we will do is tell the server's SSH PAM configuration to ask the user for t
     > size of +-1min (window size of 3) to about +-4min (window size of
     > 17 acceptable tokens).
     > Do you want to do so? (y/n) y
-    > 
+    >
     > If the computer that you are logging into isn't hardened against brute-force
     > login attempts, you can enable rate-limiting for the authentication module.
     > By default, this limits attackers to no more than 3 login attempts every 30s.
@@ -844,7 +844,7 @@ sudo lets accounts run commands as other accounts, including **root**. We want t
 
 - Your installation may have already done this, or may already have a special group intended for this purpose so check first.
   - Debian creates the sudo group. To view users that are part of this group (thus have sudo privileges):
-	  
+
 	  ```
 	  cat /etc/group | grep "sudo"
 	  ```
@@ -952,7 +952,7 @@ Browsers (even more the Closed Source ones) and eMail Clients are highly suggest
     ``` bash
     sudo apt install firejail firejail-profiles
     ```
-    
+
     Note: for Debian 10 Stable, official Backport is suggested:
 
     ``` bash
@@ -1014,7 +1014,7 @@ NTP stands for Network Time Protocol. In the context of this guide, an NTP clien
     ``` bash
     sudo apt install ntp
     ```
-    
+
 1. Make a backup of the NTP client's configuration file `/etc/ntp.conf`:
 
     ``` bash
@@ -1022,20 +1022,20 @@ NTP stands for Network Time Protocol. In the context of this guide, an NTP clien
     ```
 
 1. The default configuration, at least on Debian, is already pretty secure. The only thing we'll want to make sure is we're the `pool` directive and not any `server` directives. The `pool` directive allows the NTP client to stop using a server if it is unresponsive or serving bad time. Do this by commenting out all `server` directives and adding the below to `/etc/ntp.conf`.
-	
+
     ```
     pool pool.ntp.org iburst
     ```
-    
+
     [For the lazy](#editing-configuration-files---for-the-lazy):
-    
+
     ``` bash
     sudo sed -i -r -e "s/^((server|pool).*)/# \1         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/ntp.conf
     echo -e "\npool pool.ntp.org iburst         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/ntp.conf
     ```
 
     **Example `/etc/ntp.conf`**:
-    
+
     > ```
     > driftfile /var/lib/ntp/ntp.drift
     > statistics loopstats peerstats clockstats
@@ -1049,7 +1049,7 @@ NTP stands for Network Time Protocol. In the context of this guide, an NTP clien
     > restrict source notrap nomodify noquery
     > pool pool.ntp.org iburst         # added by user on 2019-03-09 @ 10:23:35
     > ```
-    
+
 1. Restart ntp:
 
     ``` bash
@@ -1072,7 +1072,7 @@ NTP stands for Network Time Protocol. In the context of this guide, an NTP clien
     >     Tasks: 2 (limit: 4915)
     >    CGroup: /system.slice/ntp.service
     >            └─1038 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 108:113
-    > 
+    >
     > Mar 09 15:19:46 host ntpd[1038]: Listen and drop on 0 v6wildcard [::]:123
     > Mar 09 15:19:46 host ntpd[1038]: Listen and drop on 1 v4wildcard 0.0.0.0:123
     > Mar 09 15:19:46 host ntpd[1038]: Listen normally on 2 lo 127.0.0.1:123
@@ -1134,9 +1134,9 @@ To quote https://linux-audit.com/linux-system-hardening-adding-hidepid-to-proc/:
     ```
     proc     /proc     proc     defaults,hidepid=2     0     0
     ```
-    
+
     [For the lazy](#editing-configuration-files---for-the-lazy):
-    
+
     ``` bash
     echo -e "\nproc     /proc     proc     defaults,hidepid=2     0     0         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")" | sudo tee -a /etc/fstab
     ```
@@ -1146,7 +1146,7 @@ To quote https://linux-audit.com/linux-system-hardening-adding-hidepid-to-proc/:
     ``` bash
     sudo reboot now
     ```
-    
+
     **Note**: Alternatively, you can remount `/proc` without rebooting with `sudo mount -o remount,hidepid=2 /proc`
 
 ([Table of Contents](#table-of-contents))
@@ -1209,7 +1209,7 @@ When there is a need to set or change an account password, the password task of 
 
 
     [For the lazy](#editing-configuration-files---for-the-lazy):
-    
+
     ``` bash
     sudo sed -i -r -e "s/^(password\s+requisite\s+pam_pwquality.so)(.*)$/# \1\2         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n\1 retry=3 minlen=10 difok=3 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1 maxrepeat=3 gecoschec         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/pam.d/common-password
     ```
@@ -1384,7 +1384,7 @@ WIP
 #### Steps
 
 1. Install rng-tools.
-   
+
     On Debian based systems:
 
     ``` bash
@@ -1396,9 +1396,9 @@ WIP
     ```
     HRNGDEVICE=/dev/urandom
     ```
-    
+
     [For the lazy](#editing-configuration-files---for-the-lazy):
-    
+
     ``` bash
     echo "HRNGDEVICE=/dev/urandom" | sudo tee -a /etc/default/rng-tools
     ```
@@ -1428,7 +1428,7 @@ The pamduress will add to the X user a secondary password (Panic password), when
 
 Practical & real Example:
 "Some Robber invade a home, and steal the server (containing IMPORTANT business backups, and ownlife memories and blablabla). Not exist any disk/boot encryption. Robber have start the server on their 'safe zone' and start an bruteforce attack. He have cracked the local password by SSH with from sudoer user 'admin' success, yeah a dummy password, not THE Strong one/primary. He starts SSH session/or physical session with that cracked dummy/panic password with 'admin' sudoer. He starts feeling the server seems too much busy in less than 2 minutes until to freeze.. 'wtf!?! lets reboot and continue steal info..'.. sorry friend. all data and system was destroyed.".
-    Conclusion, the robber cracked the dummy/panic/secondary password, and with this password its associated a script will do delete all files, config, system, boot and after than start charge the RAM and CPU to force robber reboot system.  
+    Conclusion, the robber cracked the dummy/panic/secondary password, and with this password its associated a script will do delete all files, config, system, boot and after than start charge the RAM and CPU to force robber reboot system.
 
 #### Goals
 
@@ -1480,7 +1480,7 @@ sudo apt install -y git build-essential libpam0g-dev libssl-dev
 cd "$HOME" || exit 1
 git clone https://github.com/nuvious/pam-duress.git
 cd pam-duress || exit 1
-make 
+make
 sudo make install
 make clean
 #make uninstall
@@ -1593,7 +1593,7 @@ You can create rules by explicitly specifying the ports or with application conf
     ``` bash
     # allow traffic out to port 53 -- DNS
     sudo ufw allow out 53 comment 'allow DNS calls out'
-	
+
 	# allow traffic out to port 123 -- NTP
     sudo ufw allow out 123 comment 'allow NTP out'
 
@@ -1605,7 +1605,7 @@ You can create rules by explicitly specifying the ports or with application conf
 
     # allow whois
     sudo ufw allow out whois comment 'allow whois'
-    
+
     # allow mails for status notifications -- choose port according to your provider
     sudo ufw allow out 25 comment 'allow SMTP out'
     sudo ufw allow out 587 comment 'allow SMTP out'
@@ -1615,7 +1615,7 @@ You can create rules by explicitly specifying the ports or with application conf
     sudo ufw allow out 67 comment 'allow the DHCP client to update'
     sudo ufw allow out 68 comment 'allow the DHCP client to update'
     ```
-    
+
     **Note**: You'll need to allow HTTP/HTTPS for installing packages and many other things.
 
 1. Start ufw:
@@ -1637,12 +1637,12 @@ You can create rules by explicitly specifying the ports or with application conf
 
     > ```
     > Status: active
-    > 
+    >
     > To                         Action      From
     > --                         ------      ----
     > 22/tcp                     LIMIT       Anywhere                   # allow SSH connections in
     > 22/tcp (v6)                LIMIT       Anywhere (v6)              # allow SSH connections in
-    > 
+    >
     > 53                         ALLOW OUT   Anywhere                   # allow DNS calls out
     > 123                        ALLOW OUT   Anywhere                   # allow NTP out
     > 80/tcp                     ALLOW OUT   Anywhere                   # allow HTTP traffic out
@@ -1670,12 +1670,12 @@ You can create rules by explicitly specifying the ports or with application conf
     > Logging: on (low)
     > Default: deny (incoming), deny (outgoing), disabled (routed)
     > New profiles: skip
-    > 
+    >
     > To                         Action      From
     > --                         ------      ----
     > 22/tcp                     LIMIT IN    Anywhere                   # allow SSH connections in
     > 22/tcp (v6)                LIMIT IN    Anywhere (v6)              # allow SSH connections in
-    > 
+    >
     > 53                         ALLOW OUT   Anywhere                   # allow DNS calls out
     > 123                        ALLOW OUT   Anywhere                   # allow NTP out
     > 80/tcp                     ALLOW OUT   Anywhere                   # allow HTTP traffic out
@@ -1693,7 +1693,7 @@ You can create rules by explicitly specifying the ports or with application conf
     > ```
 
 7. If you need to delete a rule
-    
+
     ``` bash
     sudo ufw status numbered
     [...]
@@ -1760,12 +1760,12 @@ sudo ufw app info [app name]
 > ``` bash
 > sudo ufw app info DNS
 > ```
-> 
+>
 > ```
 > Profile: DNS
 > Title: Internet Domain Name Server
 > Description: Internet Domain Name Server
-> 
+>
 > Port:
 >   53
 > ```
@@ -1876,11 +1876,11 @@ And, since we're already using [UFW](#ufw-uncomplicated-firewall) so we'll follo
 
     > ```
     > ...
-    > 
+    >
     > # log all traffic so psad can analyze
     > -A INPUT -j LOG --log-tcp-options --log-prefix "[IPTABLES] "
     > -A FORWARD -j LOG --log-tcp-options --log-prefix "[IPTABLES] "
-    > 
+    >
     > # don't delete the 'COMMIT' line or these rules won't be processed
     > COMMIT
     > ```
@@ -1922,34 +1922,34 @@ And, since we're already using [UFW](#ufw-uncomplicated-firewall) so we'll follo
     > [-] psad: pid file /var/run/psad/psadwatchd.pid does not exist for psadwatchd on vm
     > [+] psad_fw_read (pid: 3444)  %CPU: 0.0  %MEM: 2.2
     >     Running since: Sat Feb 16 01:03:09 2019
-    > 
+    >
     > [+] psad (pid: 3435)  %CPU: 0.2  %MEM: 2.7
     >     Running since: Sat Feb 16 01:03:09 2019
     >     Command line arguments: [none specified]
     >     Alert email address(es): root@localhost
-    > 
+    >
     > [+] Version: psad v2.4.3
-    > 
+    >
     > [+] Top 50 signature matches:
     >         [NONE]
-    > 
+    >
     > [+] Top 25 attackers:
     >         [NONE]
-    > 
+    >
     > [+] Top 20 scanned ports:
     >         [NONE]
-    > 
+    >
     > [+] iptables log prefix counters:
     >         [NONE]
-    > 
+    >
     >     Total protocol packet counters:
-    > 
+    >
     > [+] IP Status Detail:
     >         [NONE]
-    > 
+    >
     >     Total scan sources: 0
     >     Total scan destinations: 0
-    > 
+    >
     > [+] These results are available in: /var/log/psad/status.out
     > ```
 
@@ -1959,7 +1959,7 @@ And, since we're already using [UFW](#ufw-uncomplicated-firewall) so we'll follo
 
 #### Why
 
-UFW tells your server what doors to board up so nobody can see them, and what doors to allow authorized users through. PSAD monitors network activity to detect and prevent potential intrusions -- repeated attempts to get in. 
+UFW tells your server what doors to board up so nobody can see them, and what doors to allow authorized users through. PSAD monitors network activity to detect and prevent potential intrusions -- repeated attempts to get in.
 
 But what about the applications/services your server is running, like SSH and Apache, where your firewall is configured to allow access in. Even though access may be allowed that doesn't mean all access attempts are valid and harmless. What if someone tries to brute-force their way in to a web-app you're running on your server? This is where Fail2ban comes in.
 
@@ -2131,11 +2131,11 @@ WIP
 1. Install AIDE.
 
     On Debian based systems:
-    
+
     ``` bash
     sudo apt install aide aide-common
     ```
-    
+
 1. Make a backup of AIDE's defaults file:
 
     ``` bash
@@ -2158,25 +2158,25 @@ WIP
     - Take a backup of the stock configuration files: `sudo cp -pr /etc/aide /etc/aide-COPY-$(date +"%Y%m%d%H%M%S")`.
 
 1. Create a new database, and install it.
-   
+
     On Debian based systems:
 
     ``` bash
     sudo aideinit
     ```
-    
+
     > ```
     > Running aide --init...
     > Start timestamp: 2019-04-01 21:23:37 -0400 (AIDE 0.16)
     > AIDE initialized database at /var/lib/aide/aide.db.new
     > Verbose level: 6
-    > 
+    >
     > Number of entries:      25973
-    > 
+    >
     > ---------------------------------------------------
     > The attributes of the (uncompressed) database(s):
     > ---------------------------------------------------
-    > 
+    >
     > /var/lib/aide/aide.db.new
     >   RMD160   : moyQ1YskQQbidX+Lusv3g2wf1gQ=
     >   TIGER    : 7WoOgCrXzSpDrlO6I3PyXPj1gRiaMSeo
@@ -2190,8 +2190,8 @@ WIP
     >              CPGQSW4tl14=
     >   GOST     : n5Ityzxey9/1jIs7LMc08SULF1sLBFUc
     >              aMv7Oby604A=
-    > 
-    > 
+    >
+    >
     > End timestamp: 2019-04-01 21:24:45 -0400 (run time: 1m 8s)
     > ```
 
@@ -2202,18 +2202,18 @@ WIP
     ``` bash
     sudo aide.wrapper --check
     ```
-    
+
     > ```
     > Start timestamp: 2019-04-01 21:24:45 -0400 (AIDE 0.16)
     > AIDE found NO differences between database and filesystem. Looks okay!!
     > Verbose level: 6
-    > 
+    >
     > Number of entries:      25973
-    > 
+    >
     > ---------------------------------------------------
     > The attributes of the (uncompressed) database(s):
     > ---------------------------------------------------
-    > 
+    >
     > /var/lib/aide/aide.db
     >   RMD160   : moyQ1YskQQbidX+Lusv3g2wf1gQ=
     >   TIGER    : 7WoOgCrXzSpDrlO6I3PyXPj1gRiaMSeo
@@ -2227,8 +2227,8 @@ WIP
     >              CPGQSW4tl14=
     >   GOST     : n5Ityzxey9/1jIs7LMc08SULF1sLBFUc
     >              aMv7Oby604A=
-    > 
-    > 
+    >
+    >
     > End timestamp: 2019-04-01 21:26:03 -0400 (run time: 1m 18s)
     > ```
 
@@ -2239,52 +2239,52 @@ WIP
     ``` bash
     sudo touch /etc/test.sh
     sudo touch /root/test.sh
-    
+
     sudo aide.wrapper --check
-    
+
     sudo rm /etc/test.sh
     sudo rm /root/test.sh
-    
+
     sudo aideinit -y -f
     ```
-    
+
     > ```
     > Start timestamp: 2019-04-01 21:37:37 -0400 (AIDE 0.16)
     > AIDE found differences between database and filesystem!!
     > Verbose level: 6
-    > 
+    >
     > Summary:
     >   Total number of entries:      25972
     >   Added entries:                2
     >   Removed entries:              0
     >   Changed entries:              1
-    > 
+    >
     > ---------------------------------------------------
     > Added entries:
     > ---------------------------------------------------
-    > 
+    >
     > f++++++++++++++++: /etc/test.sh
     > f++++++++++++++++: /root/test.sh
-    > 
+    >
     > ---------------------------------------------------
     > Changed entries:
     > ---------------------------------------------------
-    > 
+    >
     > d =.... mc.. .. .: /root
-    > 
+    >
     > ---------------------------------------------------
     > Detailed information about changes:
     > ---------------------------------------------------
-    > 
+    >
     > Directory: /root
     >   Mtime    : 2019-04-01 21:35:07 -0400        | 2019-04-01 21:37:36 -0400
     >   Ctime    : 2019-04-01 21:35:07 -0400        | 2019-04-01 21:37:36 -0400
-    > 
-    > 
+    >
+    >
     > ---------------------------------------------------
     > The attributes of the (uncompressed) database(s):
     > ---------------------------------------------------
-    > 
+    >
     > /var/lib/aide/aide.db
     >   RMD160   : qF9WmKaf2PptjKnhcr9z4ueCPTY=
     >   TIGER    : zMo7MvvYJcq1hzvTQLPMW7ALeFiyEqv+
@@ -2298,11 +2298,11 @@ WIP
     >              U12KCSkrO7Y=
     >   GOST     : 74sLV4HkTig+GJhokvxZQm7CJD/NR0mG
     >              6jV7zdt5AXQ=
-    > 
-    > 
+    >
+    >
     > End timestamp: 2019-04-01 21:38:50 -0400 (run time: 1m 13s)
     > ```
-    
+
 1. That's it. If you set `CRON_DAILY_RUN` to `yes` in `/etc/default/aide` then cron will execute `/etc/cron.daily/aide` every day and e-mail you the output.
 
 #### Updating The Database
@@ -2361,13 +2361,13 @@ WIP
     ``` bash
     sudo cp --archive /etc/clamav/freshclam.conf /etc/clamav/freshclam.conf-COPY-$(date +"%Y%m%d%H%M%S")
     ```
-    
+
 1. `clamav-freshclam`'s default settings are probably good enough but if you want to change them, you can either edit the file `/etc/clamav/freshclam.conf` or use `dpkg-reconfigure`:
 
     ``` bash
     sudo dpkg-reconfigure clamav-freshclam
     ```
-    
+
     **Note**: The default settings will update the definitions 24 times in a day. To change the interval, check the `Checks` setting in `/etc/clamav/freshclam.conf` or use `dpkg-reconfigure`.
 
 1. Start the `clamav-freshclam` service:
@@ -2375,13 +2375,13 @@ WIP
     ``` bash
     sudo service clamav-freshclam start
     ```
-    
+
 1. You can make sure `clamav-freshclam` running:
 
     ``` bash
     sudo service clamav-freshclam status
     ```
-    
+
     > ```
     > ● clamav-freshclam.service - ClamAV virus database updater
     >    Loaded: loaded (/lib/systemd/system/clamav-freshclam.service; enabled; vendor preset: enabled)   Active: active (running) since Sat 2019-03-16 22:57:07 EDT; 2min 13s ago
@@ -2391,7 +2391,7 @@ WIP
     >  Main PID: 1288 (freshclam)
     >    CGroup: /system.slice/clamav-freshclam.service
     >            └─1288 /usr/bin/freshclam -d --foreground=true
-    > 
+    >
     > Mar 16 22:57:08 host freshclam[1288]: Sat Mar 16 22:57:08 2019 -> ^Local version: 0.100.2 Recommended version: 0.101.1
     > Mar 16 22:57:08 host freshclam[1288]: Sat Mar 16 22:57:08 2019 -> DON'T PANIC! Read https://www.clamav.net/documents/upgrading-clamav
     > Mar 16 22:57:15 host freshclam[1288]: Sat Mar 16 22:57:15 2019 -> Downloading main.cvd [100%]
@@ -2403,7 +2403,7 @@ WIP
     > Mar 16 22:58:24 host freshclam[1288]: Sat Mar 16 22:58:24 2019 -> Database updated (6086349 signatures) from db.local.clamav.net (IP: 104.16.219.84)
     > Mar 16 22:58:24 host freshclam[1288]: Sat Mar 16 22:58:24 2019 -> ^Clamd was NOT notified: Can't connect to clamd through /var/run/clamav/clamd.ctl: No such file or directory
     > ```
-    
+
     **Note**: Don't worry about that `Local version` line. Check https://serverfault.com/questions/741299/is-there-a-way-to-keep-clamav-updated-on-debian-8 for more details.
 
 1. Make a backup of `clamav-daemon`'s configuration file `/etc/clamav/clamd.conf`:
@@ -2411,7 +2411,7 @@ WIP
     ``` bash
     sudo cp --archive /etc/clamav/clamd.conf /etc/clamav/clamd.conf-COPY-$(date +"%Y%m%d%H%M%S")
     ```
-    
+
 1. You can change `clamav-daemon`'s settings by editing the file `/etc/clamav/clamd.conf` or useing `dpkg-reconfigure`:
 
     ``` bash
@@ -2421,7 +2421,7 @@ WIP
 #### Scanning Files/Folders
 
 - To scan files/folders use the `clamscan` program.
-- `clamscan` runs as the user it is executed as so it needs read permissions to the files/folders it is scanning. 
+- `clamscan` runs as the user it is executed as so it needs read permissions to the files/folders it is scanning.
 - Using `clamscan` as `root` is dangerous because if a file is in fact a virus there is risk that it could use the root privileges.
 - To scan a file: `clamscan /path/to/file`.
 - To scan a directory: `clamscan -r /path/to/folder`.
@@ -2455,7 +2455,7 @@ WIP
 1. Install Rkhunter.
 
     On Debian based systems:
-    
+
     ``` bash
     sudo apt install rkhunter
     ```
@@ -2471,7 +2471,7 @@ WIP
     ``` bash
     sudo cp -p /etc/rkhunter.conf /etc/rkhunter.conf.local
     ```
-    
+
 1. Go through the configuration file `/etc/rkhunter.conf.local` and set to your requirements. My recommendations:
 
     |Setting|Note|
@@ -2487,9 +2487,9 @@ WIP
     |`SHOW_SUMMARY_WARNINGS_NUMBER=1`|to see the actual number of warnings found|
 
 1. You want rkhunter to run every day and e-mail you the result. You can write your own script or check https://www.tecmint.com/install-rootkit-hunter-scan-for-rootkits-backdoors-in-linux/ for a sample cron script you can use.
-   
+
     On Debian based system, rkhunter comes with cron scripts. To enable them check `/etc/default/rkhunter` or use `dpkg-reconfigure` and say `Yes` to all of the questions:
-    
+
     ``` bash
     sudo dpkg-reconfigure rkhunter
     ```
@@ -2541,7 +2541,7 @@ WIP
 1. Install chkrootkit.
 
     On Debian based systems:
-    
+
     ``` bash
     sudo apt install chkrootkit
     ```
@@ -2551,7 +2551,7 @@ WIP
     ``` bash
     sudo chkrootkit
     ```
-    
+
     > ```
     > ROOTDIR is `/'
     > Checking `amd'...                                           not found
@@ -2574,9 +2574,9 @@ WIP
     ```
 
 1. You want chkrootkit to run every day and e-mail you the result.
-   
+
     On Debian based system, chkrootkit comes with cron scripts. To enable them check `/etc/chkrootkit.conf` or use `dpkg-reconfigure` and say `Yes` to the first question:
-    
+
     ``` bash
     sudo dpkg-reconfigure chkrootkit
     ```
@@ -2628,7 +2628,7 @@ logwatch's configuration file `/usr/share/logwatch/default.conf/logwatch.conf` s
     ```
 
     > ```
-    > 
+    >
     >  ################### Logwatch 7.4.3 (12/07/16) ####################
     >         Processing Initiated: Mon Mar  4 00:05:50 2019
     >         Date Range Processed: yesterday
@@ -2638,13 +2638,13 @@ logwatch's configuration file `/usr/share/logwatch/default.conf/logwatch.conf` s
     >         Type of Output/Format: stdout / text
     >         Logfiles for Host: host
     >  ##################################################################
-    > 
+    >
     >  --------------------- Cron Begin ------------------------
     > ...
     > ...
     >  ---------------------- Disk Space End -------------------------
-    > 
-    > 
+    >
+    >
     >  ###################### Logwatch End #########################
     > ```
 
@@ -2665,19 +2665,19 @@ logwatch's configuration file `/usr/share/logwatch/default.conf/logwatch.conf` s
 
     > ```
     > #!/bin/bash
-    > 
+    >
     > #Check if removed-but-not-purged
     > test -x /usr/share/logwatch/scripts/logwatch.pl || exit 0
-    > 
+    >
     > #execute
     > /usr/sbin/logwatch --output mail --format html --mailto root --range yesterday --service all
-    > 
+    >
     > #Note: It's possible to force the recipient in above command
     > #Just pass --mailto address@a.com instead of --output mail
     > ```
 
     [For the lazy](#editing-configuration-files---for-the-lazy):
-    
+
     ``` bash
     sudo sed -i -r -e "s,^($(sudo which logwatch).*?),# \1         # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n$(sudo which logwatch) --output mail --format html --mailto root --range yesterday --service all         # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")," /etc/cron.daily/00logwatch
     ```
@@ -2687,7 +2687,7 @@ logwatch's configuration file `/usr/share/logwatch/default.conf/logwatch.conf` s
     ``` bash
     sudo /etc/cron.daily/00logwatch
     ```
-    
+
     **Note**: If logwatch fails to deliver mail due to the e-mail having long lines please check https://blog.dhampir.no/content/exim4-line-length-in-debian-stretch-mail-delivery-failed-returning-message-to-sender as documented in [issue #29](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server/issues/29). If you followed [Gmail and Exim4 As MTA With Implicit TLS](#gmail-and-exim4-as-mta-with-implicit-tls) then we already took care of this in step #7.
 
 ([Table of Contents](#table-of-contents))
@@ -2718,14 +2718,14 @@ Obviously we don't want your server listening on ports we don't know about. We'l
     ``` bash
     sudo ss -lntup
     ```
-    
+
     > ```
     > Netid  State      Recv-Q Send-Q     Local Address:Port     Peer Address:Port
     > udp    UNCONN     0      0                      *:68                  *:*        users:(("dhclient",pid=389,fd=6))
     > tcp    LISTEN     0      128                    *:22                  *:*        users:(("sshd",pid=4390,fd=3))
     > tcp    LISTEN     0      128                   :::22                 :::*        users:(("sshd",pid=4390,fd=4))
     > ```
-    
+
     **Switch Explanations**:
     - `l` = display listening sockets
     - `n` = do not try to resolve service names
@@ -2829,7 +2829,7 @@ From [https://github.com/ossec/ossec-hids](https://github.com/ossec/ossec-hids)
 OSSEC by default run rootkit check each 2 hours.
 
    ```bash
-    sudo /var/ossec/bin/agent_control -u <AGENT_ID> -r 
+    sudo /var/ossec/bin/agent_control -u <AGENT_ID> -r
    ```
 
 **Alerts**
@@ -3014,7 +3014,7 @@ If you forget the password, you'll have to go through [some work](https://www.cy
     > ``` bash
     > #!/bin/sh
     > set -e
-    > 
+    >
     > cat << EOF
     > set superusers="grub"
     > password_pbkdf2 grub grub.pbkdf2.sha512.100000.2812C233DFC899EFC3D5991D8CA74068C99D6D786A54F603E9A1EFE7BAEDDB6AA89672F92589FAF98DB9364143E7A1156C9936328971A02A483A84C3D028C4FF.C255442F9C98E1F3C500C373FE195DCF16C56EEBDC55ABDD332DD36A92865FA8FC4C90433757D743776AB186BD3AE5580F63EF445472CC1D151FA03906D08A6D
@@ -3067,9 +3067,9 @@ If you have sudo [configured properly](#limit-who-can-use-sudo), then the **root
 If your installation uses [`sulogin`](https://linux.die.net/man/8/sulogin) (like Debian) to drop to a **root** console during boot failures, then locking the **root** account will prevent `sulogin` from opening the **root** shell and you will get this error:
 
     Cannot open access to console, the root account is locked.
-    
+
     See sulogin(8) man page for more details.
-    
+
     Press Enter to continue.
 
 To work around this, you can use the `--force` option for `sulogin`. Some distributions already include this, or some other, workaround.
@@ -3275,7 +3275,7 @@ Well I will SIMPLIFY this method, to only output email using Google Mail account
     #proxy_host 127.0.0.1
     #proxy_port 9001
     from $MYEMAIL
-    timeout off 
+    timeout off
     protocol smtp
     #auto_from [(on|off)]
     #from envelope_from
@@ -3304,22 +3304,22 @@ Well I will SIMPLIFY this method, to only output email using Google Mail account
     account default : gmail
     EOF
     chmod 0400 /root/.msmtprc
-    
+
        ## In testing .. auto command
-    # echo -e "1\n4096\n\ny\n$MYUSRMAIL\n$MYEMAIL\nmy key\nO\n$PWDMAIL\n$PWDMAIL\n" | gpg --full-generate-key 
+    # echo -e "1\n4096\n\ny\n$MYUSRMAIL\n$MYEMAIL\nmy key\nO\n$PWDMAIL\n$PWDMAIL\n" | gpg --full-generate-key
     ##
     gpg --full-generate-key
     gpg --output revoke.asc --gen-revoke $MYEMAIL
     echo -e "$PWDEMAIL\n" | gpg -e -o /root/msmtp-mail.gpg --recipient $MYEMAIL
-    echo "export GPG_TTY=\$(tty)" >> .baschrc	
+    echo "export GPG_TTY=\$(tty)" >> .baschrc
     chmod 400 msmtp-mail.gpg
-    
+
     echo "Hello there" | msmtp --debug $MYEMAIL
     echo"######################
     ## MSMTP Configured ##
     ######################"
     ```
-    
+
 DONE!! ;)
 ([Table of Contents](#table-of-contents))
 
@@ -3417,9 +3417,9 @@ Also, as discussed in [issue #29](https://github.com/imthenachoman/How-To-Secure
     > [*] Creating a self signed SSL certificate for Exim!
     >     This may be sufficient to establish encrypted connections but for
     >     secure identification you need to buy a real certificate!
-    > 
+    >
     >     Please enter the hostname of your MTA at the Common Name (CN) prompt!
-    > 
+    >
     > Generating a RSA private key
     > ..........................................+++++
     > ................................................+++++
@@ -3519,7 +3519,7 @@ Also, as discussed in [issue #29](https://github.com/imthenachoman/How-To-Secure
     ``` bash
     sudo sed -i -r -e "/\.ifdef MAIN_TLS_ENABLE/ a # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n.ifdef TLS_ON_CONNECT_PORTS\n    tls_on_connect_ports = TLS_ON_CONNECT_PORTS\n.endif\n# end add" /etc/exim4/exim4.conf.template
     ```
-    
+
 1. Update exim4 configuration to use TLS and then restart the service:
 
     ``` bash
@@ -3590,7 +3590,7 @@ There will come a time when you'll need to look through your iptables logs. Havi
     :msg, contains, "[IPTABLES] " /var/log/iptables.log
     & stop
     ```
-    
+
     If you're expecting a lot if data being logged by your firewall, prefix the filename with a `-` ["to omit syncing the file after every logging"](https://www.rsyslog.com/doc/v8-stable/configuration/actions.html#regular-file). For example:
 
     ```
@@ -3599,7 +3599,7 @@ There will come a time when you'll need to look through your iptables logs. Havi
     ```
 
     **Note**: Remember to change the prefix to whatever you use.
-    
+
     [For the lazy](#editing-configuration-files---for-the-lazy):
 
     ``` bash
@@ -3614,13 +3614,13 @@ There will come a time when you'll need to look through your iptables logs. Havi
     ```
     IPT_SYSLOG_FILE /var/log/iptables.log;
     ```
-    
+
     **Note**: Remember to change the prefix to whatever you use.
-    
+
     [For the lazy](#editing-configuration-files---for-the-lazy):
-    
+
     ``` bash
-    sudo sed -i -r -e "s/^(IPT_SYSLOG_FILE\s+)([^;]+)(;)$/# \1\2\3       # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n\1\/var\/log\/iptables.log\3       # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/psad/psad.conf 
+    sudo sed -i -r -e "s/^(IPT_SYSLOG_FILE\s+)([^;]+)(;)$/# \1\2\3       # commented by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")\n\1\/var\/log\/iptables.log\3       # added by $(whoami) on $(date +"%Y-%m-%d @ %H:%M:%S")/" /etc/psad/psad.conf
     ```
 
 1. Restart psad and rsyslog to activate the changes (or reboot):
@@ -3648,9 +3648,9 @@ There will come a time when you'll need to look through your iptables logs. Havi
         endscript
     }
     ```
-    
+
     [For the lazy](#editing-configuration-files---for-the-lazy):
-    
+
     ``` bash
     cat << EOF | sudo tee /etc/logrotate.d/iptables
     /var/log/iptables.log
